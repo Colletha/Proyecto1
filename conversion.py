@@ -27,7 +27,7 @@ class Conversion:
         self.ventana = tk.Toplevel()
         self.ventana.title(titulo)
         self.ventana.geometry("320x270")
-        self.ventana.configure(bg="#f8bbd0")
+        self.ventana.configure(bg="#f8bbd0") 
 
         self.conversiones = conversiones
 
@@ -58,7 +58,6 @@ class Conversion:
         except ValueError:
             messagebox.showerror("Error", "Ingrese un número válido.")
 
-
 def longitud():
     conversiones = {
         "Metros a Kilómetros": metros_a_kilometros,
@@ -80,36 +79,35 @@ def tiempo():
     }
     Conversion("Conversión de Tiempo", conversiones)
 
-
 def homepage():
     ventana = tk.Tk()
     ventana.title("Conversor Universal")
     ventana.geometry("300x300")
-    ventana.configure(bg="#e1f5fe")
+    ventana.configure(bg="#fce4ec")  
 
-    tk.Label(ventana, text="Escoja su opción", bg="#a5d6a7", font=("Arial", 14)).pack(pady=10)
+    tk.Label(ventana, text="Escoja su opción", bg="#fce4ec", font=("Arial", 14, "bold")).pack(pady=10)
 
     opciones = [("Longitud", longitud),
                 ("Masa", masa),
                 ("Tiempo", tiempo)]
 
     for texto, funcion in opciones:
-        tk.Button(ventana, text=texto, command=funcion, width=20, bg="#ff8a65", fg="white").pack(pady=10)
+        tk.Button(ventana, text=texto, command=funcion, width=20,
+                  bg="#ce93d8", fg="white", font=("Arial", 10, "bold")).pack(pady=10)
 
     ventana.mainloop()
-
 
 def login():
     ventana = tk.Tk()
     ventana.title("Login")
     ventana.geometry("300x200")
-    ventana.configure(bg="#fce4ec")
+    ventana.configure(bg="#fce4ec") 
 
-    tk.Label(ventana, text="Usuario:", bg="#fce4ec").pack(pady=5)
+    tk.Label(ventana, text="Usuario:", bg="#fce4ec", font=("Arial", 10)).pack(pady=5)
     entrada_usuario = tk.Entry(ventana)
     entrada_usuario.pack()
 
-    tk.Label(ventana, text="Contraseña:", bg="#fce4ec").pack(pady=5)
+    tk.Label(ventana, text="Contraseña:", bg="#fce4ec", font=("Arial", 10)).pack(pady=5)
     entrada_contra = tk.Entry(ventana, show="*")
     entrada_contra.pack()
 
@@ -120,7 +118,9 @@ def login():
         else:
             messagebox.showerror("Error", "Usuario o contraseña incorrectos.")
 
-    tk.Button(ventana, text="Entrar", command=verify, bg="#f06292", fg="white").pack(pady=15)
+    tk.Button(ventana, text="Entrar", command=verify,
+              bg="#f06292", fg="white", font=("Arial", 10, "bold")).pack(pady=15)
+
     ventana.mainloop()
 
 login()
